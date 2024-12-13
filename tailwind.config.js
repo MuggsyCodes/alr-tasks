@@ -7,26 +7,22 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+    daisyui: {
+      themes: [
+        {
+          tasksTheme: {
+            primary: "#26abff",
+            secondary: "#ff26ab",
+            accent: "#26ffab",
+            neutral: "#e5f5ff",
+            "base-100": "#f2f2f2",
+          },
+        },
+        "dark",
+      ],
     },
   },
   plugins: [require("daisyui")],
-  daisyui: {
-    themes: [
-      {
-        tasksTheme: {
-          primary: "#26abff",
-          secondary: "#ff26ab",
-          accent: "#26ffab",
-          neutral: "#e5f5ff",
-          "base-100": "#f2f2f2",
-        },
-      },
-      "dark",
-    ],
-  },
+
 };
+  
