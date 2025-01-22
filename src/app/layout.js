@@ -5,6 +5,7 @@ import { poppins } from "@/components/ui/fonts";
 import { AuthProvider } from "@/context/AuthContext";
 import Footer from "@/components/ui/Footer";
 import NavBar from "@/components/ui/NavBar";
+import { FirestoreProvider } from "@/context/FirestoreContext";
 
 export const metadata = {
   metadata: new URL("http://localhost:3000"),
@@ -39,9 +40,11 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme="light">
       <body className={`${poppins.className} antialiased`}>
         <AuthProvider>
-          <NavBar />
-          {children}
-          <Footer />
+          <FirestoreProvider>
+            <NavBar />
+            {children}
+            <Footer />
+          </FirestoreProvider>
         </AuthProvider>
       </body>
     </html>
